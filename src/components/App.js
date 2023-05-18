@@ -1,32 +1,26 @@
-import React from 'react'
+import React from 'react';
 import '../styles/App.css';
-
-
 
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {date: new Date()};
+    this.state = { date: new Date() };
   }
 
   componentDidMount() {
-    this.timerID = setInterval(
-// write your code here
- ()=>this.tick,1000);
-    
+    this.timerID = setInterval(() => this.tick(), 1000);
   }
-
-   componentWillUnmount() {
+  
+  componentWillUnmount() {
     clearInterval(this.timerID);
   }
-
+  
   tick() {
     this.setState({
-      date: new Date()
+      date: new Date(),
     });
-    
   }
-
+  
   render() {
     return (
       <div id='main'>
@@ -36,7 +30,5 @@ class App extends React.Component {
     );
   }
 }
-
-
 
 export default App;
